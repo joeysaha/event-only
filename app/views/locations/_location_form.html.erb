@@ -1,9 +1,8 @@
-<!-- locations#new page -->
-<!-- <h1>New Location</h1>
+<h1>New Location</h1>
 
 <%= link_to 'Show all locations', locations_path %>
 
-<%= form_for @location do |f| %>
+<%= form_for location do |f| %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -28,9 +27,4 @@
     <%= f.submit %>
   </p>
 
-<% end %> -->
-<h1>New Location</h1>
-
-<%= link_to 'Show all locations', locations_path %>
-
-<%= render 'location_form', location: @location %>
+<% end %>

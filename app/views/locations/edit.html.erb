@@ -1,1 +1,4 @@
-locations#edit page
+<!-- locations#edit page -->
+<h1>Editing <%= link_to @location.name, location_path(@location) %></h1>
+
+<%= render 'location_form', location: @location %>
