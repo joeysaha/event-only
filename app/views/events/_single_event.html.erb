@@ -1,0 +1,6 @@
+<div class="event">
+  <h3><%= event.name %></h3>
+  <h4>City: <%= event.city %></h4>
+  <%= event.description %><br />
+  <%= link_to image_tag(event.image, class: "event"), event_path(event) %>
+</div>
