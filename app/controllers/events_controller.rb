@@ -17,10 +17,13 @@ class EventsController < ApplicationController
     @event.date = params[:event][:date]
     @event.capacity = params[:event][:capacity]
     @event.city = params[:event][:city]
+    @event.image = params[:event][:image]
+    @event.description = params[:event][:description]
 
     if @event.save
       redirect_to event_url(@event)
     else
+      flash[:alert] = "Coudln't update event"
       redirect_to event_url(@event)
     end
   end
@@ -35,10 +38,14 @@ class EventsController < ApplicationController
     @event.date = params[:event][:date]
     @event.capacity = params[:event][:capacity]
     @event.city = params[:event][:city]
+    @event.image = params[:event][:image]
+    @event.description = params[:event][:description]
+
 
     if @event.save
       redirect_to events_url
     else
+      flash[:alert] = "Coudln't create event"
       redirect_to new_event_url
     end
   end

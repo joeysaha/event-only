@@ -6,21 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-convention_centre = Location.create(
+convention_centre = Location.find_or_create_by(
   name: "Toronto Convention Centre",
   city: "Toronto",
   description: "Toronto's biggest convention location.",
   image: "http://www.hlta.ca/wp-content/uploads/2015/05/Metro-Toronto-Convention-Centre-11.jpg",
 )
 
-Location.create(
+Location.find_or_create_by(
   name: "Canada Olympic Park",
   city: "Calgary",
   description: "The home of high performance athletic training.",
   image: "http://img4.onthesnow.com/image/la/82/8277.jpg",
 )
 
-Location.create(
+Location.find_or_create_by(
   name: "BC Place",
   city: "Vancouver",
   description: "Home of the BC Lions and Vancouver Whitecaps FC.",
@@ -29,7 +29,7 @@ Location.create(
 
 20.times do
 
-  Event.create(
+  Event.find_or_create_by(
     name: FFaker::Sport.name,
     date: ((rand + 0.5) * 20).days.ago,
     capacity: ((rand*100) + 1).to_i,

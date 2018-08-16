@@ -15,7 +15,15 @@
           <span class="title event">Event</span><span class="title only">Only</span>
         </a>
       </h3>
+      <% if flash[:alert] %>
+       <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
     </header>
     <%= yield %>
+
   </body>
 </html>
